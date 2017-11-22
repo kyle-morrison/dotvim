@@ -49,6 +49,9 @@ set smartcase
 set scrolloff=3
 set visualbell
 set wildmode=list:longest
+set ruler
+"Test fugitive line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 cnoremap jk <Right><Right><C-u><C-h> 
 nnoremap ,q /(<CR>:nohl<CR>
 noremap ,e %

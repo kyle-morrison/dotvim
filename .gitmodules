@@ -10,15 +10,6 @@
 [submodule "bundle/vim-eunuch"]
 	path = bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
-[submodule "bundle/bundle/ultisnips"]
-	path = bundle/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "ultisnipss"]
-	path = ultisnipss
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle/ultisnip"]
 	path = bundle/ultisnip
 	url = https://github.com/SirVer/ultisnips.git
