@@ -4,6 +4,13 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 "So plugins are used when sessions are restored see Tim Pope pathogen
+"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
+"What I needed previously set runtimepath+=~/.vim/my-snippers/
 set sessionoptions-=options
 colo desert
 set nocompatible
@@ -47,7 +54,7 @@ set expandtab
 set ignorecase
 set smartcase
 set scrolloff=3
-set visualbell
+set novisualbell
 set wildmode=list:longest
 set ruler
 "Test fugitive line
