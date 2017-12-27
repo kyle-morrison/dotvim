@@ -4,6 +4,12 @@ for (int ${1:i} = 0; $1 < ${3:length}; $1++) {
 }
 endsnippet
 
+snippet forr "reverse for loop"
+for (int ${1:i} = ${2:length} - 1; $1 >= 0; $1++) {
+	${VISUAL}$0
+}
+endsnippet
+
 snippet fun "General function"
 
 /*
@@ -54,22 +60,6 @@ int main (void) {
 }
 endsnippet
 
-snippet pr "General printing"
-printf ("$1\n$2");
-endsnippet
-
-snippet prd "Prints digit"
-printf ("${1:}: %d\n", $2);
-endsnippet
-
-snippet prf "Prints float"
-printf ("${1:}: %f\n", $2);
-endsnippet
-
-snippet prx "Print any type"
-printf ("${1:}: %${2:d}\n", $3);
-endsnippet
-
 snippet if "Basic if statement"
 if ($1) {
 	${2:${VISUAL}}
@@ -114,18 +104,6 @@ snippet ter "ternary"
 ${1} ? {2:a} : {3:b}
 endsnippet
 
-snippet mal "mallocing memory"
-${1:int}* ${2:arrayName} = ($1*) malloc ((${3:numInts}) * sizeof($1));
-if ($2 == NULL) {
-	printf("error: malloc failed in $4");
-	return ${5:EXIT_FAILURE};
-}
-endsnippet
-
-snippet scanf "Getting user input"
-scanf ("%${1:d}, ${2:pointer})
-endsnippet
-
 snippet while "basic while loop"
 while ($1) {
 	$2
@@ -136,21 +114,6 @@ snippet dowhile "do while loop"
 do {
 	$0
 } while ($1);	
-endsnippet
-
-snippet free "free data"
-free ($1);
-endsnippet
-
-snippet sc "standard c starter header"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
-#include <time.h>
-#include "${1:`!v expand('%:t:r')`.h}"
-
-$0
 endsnippet
 
 snippet ph "program header"
@@ -164,14 +127,22 @@ Description  : $4
 $5
 endsnippet
 
+snippet scpp "standard cpp starter header"
+#include <cstdlib>
+#include <iostream>
+#include <ctime>
+#include <fstream>
+#include <vector>
+#include <string>
+
+using namespace std;
+endsnippet
+
 snippet todo "todo statement"
 /*
 TODO: ${2:Kyle Morrison} ${3:`!v strftime("%c")`}
       ${1:Description}
 */
-
-$0
-endsnippet
 
 snippet doc "docstring"
 
@@ -181,12 +152,6 @@ snippet doc "docstring"
 	Return Value: $3
 */
 endsnippet 
-
-snippet struct "Creates basic struct template"
-typedef struct ${1:person} {
-	$3
-} ${2:personType};
-endsnippet
 
 snippet def "define statment"
 #define
@@ -198,4 +163,39 @@ endsnippet
 
 snippet inch "include header file"
 #include "$1"
+endsnippet
+
+snippet vector "creates vector"
+vector<${1:int}> $0
+endsnippet
+
+snippet cout "print"
+cout << $1 << endl;
+endsnippet
+
+snippet couti "print no newline"
+cout << $1;
+endsnippet
+
+snippet class "class template in h file"
+class ${1:className} {
+
+public:
+	$1();
+	$2
+private:
+	$3;
+};
+endsnippet
+
+snippet meth "method template"
+Program Name : ${1:`!v expand('%:t')`} 
+/*
+	Purpose: $4
+	Parameters: $5
+	Return Value: $6
+*/
+${1:int} ${2:`!v expand('%:t:r')`}::${3:methodName} {
+	$7
+}
 endsnippet

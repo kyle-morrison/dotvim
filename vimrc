@@ -1,18 +1,28 @@
 "Thoughts for small buffer list transition to arglist
 ":arga %:ls<CR>:b 
 execute pathogen#infect()
-syntax on
+syntax enable
 filetype plugin indent on
 "So plugins are used when sessions are restored see Tim Pope pathogen
 "
+set background=dark
+colorscheme solarized
+"let g:solarized_termcolors=256
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_solarized_bg='dark'
+
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-m>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
+
+autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'mupdf-gl'
 
 "What I needed previously set runtimepath+=~/.vim/my-snippers/
 set sessionoptions-=options
-colo desert
+"colo desert
 set nocompatible
 autocmd FileType c call Snippetsc() 
 "autocmd FileType c,cpp vnoremap <buffer> <Space>j jI//<Esc>
