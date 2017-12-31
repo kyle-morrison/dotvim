@@ -31,10 +31,10 @@ let g:livepreview_previewer = 'mupdf-gl'
 set sessionoptions-=options
 "colo desert
 set nocompatible
-autocmd FileType c,cpp nnoremap <buffer> <Space>i :<C-u>Make<CR>
+autocmd FileType c,cpp nnoremap <buffer> <Space>i :<C-u>w<CR>:Make<CR>
+autocmd FileType c,cpp nnoremap <buffer> <Space>y :<C-u>call VimuxRunCommand("clear; ./" . expand("%:t:r"))<CR>
+autocmd FileType python nnoremap <buffer> <Space>y :<C-u>call VimuxRunCommand("clear; python3 " . expand("%:t"))<CR>
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-"make :vert sf and :sf normal mode commands
-"Look into making sf and vert sf go from currently working on project?
 "augroup vimrc_autocmds
 "    autocmd BufEnter * highlight OverLength ctermbg=red
 "    autocmd BufEnter * match OverLength /\%80v.*/
