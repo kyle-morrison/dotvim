@@ -114,10 +114,22 @@ noremap ,f F
 noremap ,w T
 nnoremap <Space>v :ls<CR>:b<Space>
 nnoremap ,x <C-w>x
-nnoremap gh <C-w>H
-nnoremap gj <C-w>J
-nnoremap gk <C-w>K
-nnoremap gl <C-w>L
+
+"Commands for fugitive.vim plugin
+nnoremap gjg :Git<Space> 
+nnoremap gjw :Gwrite<CR><CR>
+nnoremap gjc :Gread<CR>
+nnoremap gjr :Gremove<CR>
+nnoremap gjv :Gmove<Space>
+nnoremap gjt :Gcommit<CR>
+nnoremap gjb :Gblame<CR>
+nnoremap gja :Gstatus<CR>
+nnoremap gjs :Gpush<CR>
+nnoremap gjl :Gpull<CR>
+nnoremap ghh <C-w>H
+nnoremap gjj <C-w>J
+nnoremap gkk <C-w>K
+nnoremap gll <C-w>L
 noremap ,, ,
 nnoremap zk O<Esc>j
 nnoremap zj o<Esc>k
