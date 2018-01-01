@@ -1,10 +1,6 @@
-"Thoughts for small buffer list transition to arglist
-":arga %:ls<CR>:b 
 execute pathogen#infect()
 syntax enable
 filetype plugin indent on
-"So plugins are used when sessions are restored see Tim Pope pathogen
-"
 set background=dark
 colorscheme solarized
 "let g:solarized_termcolors=256
@@ -15,6 +11,7 @@ set rtp+=/usr/local/opt/fzf
 "When switch from vim save that current buffer if needed
 let g:tmux_navigator_save_on_switch = 1
 
+"Actually creates vertical split
 let g:VimuxOrientation = "h"
 
 let g:airline#extensions#tabline#enabled = 1
@@ -25,10 +22,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-m>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-autocmd Filetype tex setl updatetime=1
+autocmd Filetype tex setl updatetime=1000
 let g:livepreview_previewer = 'mupdf-gl'
 
 set sessionoptions-=options
+
+"find ctags for later
+set tags+=./tags;/
 "colo desert
 set nocompatible
 autocmd FileType c,cpp nnoremap <buffer> <Space>i :<C-u>w<CR>:Make<CR>
@@ -48,7 +48,7 @@ set textwidth=79
 set formatoptions=qrn1
 set autoindent
 set autowrite
-set relativenumber
+set number relativenumber
 set hidden
 set tabstop=4
 set shiftwidth=4
@@ -59,7 +59,10 @@ set smartcase
 set scrolloff=3
 set novisualbell
 set wildmode=list:longest
+set nohlsearch
+set incsearch
 set ruler
+set backspace=indent,eol,start
 cnoremap jk <Right><Right><C-u><C-h> 
 nnoremap ,q /(<CR>:nohl<CR>
 noremap ,e %
@@ -91,12 +94,10 @@ cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 map <Space>e :e %%
 map  <Space>d :vsp %%
 map <Space>s :sp %%
-nnoremap <Space><Space> :mksession!<Space>.vim<Space><Bar><Space>:xa<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 nnoremap <Space>r :ls<CR>:vsp<Space><Bar><Space>b<Space>
 nnoremap <Space>m :ls<CR>:sp<Space><Bar><Space>b<Space>
 nnoremap <Space>w :w<cr>
 nnoremap <Space>q :wq<cr>
-nnoremap <Space>g :nohl<CR>
 nnoremap <Space>z :only<CR>
 nnoremap <Space>x :ls<CR>:bd<Space>
 nnoremap <Space>n :cn<CR>
@@ -133,8 +134,6 @@ nnoremap gll <C-w>L
 noremap ,, ,
 nnoremap zk O<Esc>j
 nnoremap zj o<Esc>k
-set hlsearch
-set incsearch
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
@@ -149,4 +148,6 @@ set statusline+=%=
 set statusline+=%l
 set statusline+=/
 set statusline+=%L
-
+"nnoremap =oa :setlocal nonumber<Space><bar><Space>:setlocal norelativenumber
+"Thoughts for small buffer list transition to arglist
+":arga %:ls<CR>:b 
