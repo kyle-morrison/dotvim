@@ -17,13 +17,13 @@ let g:VimuxOrientation = "h"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_solarized_bg='dark'
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-m>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsExpandTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-y>"
 let g:UltiSnipsEditSplit="vertical"
 
-autocmd Filetype tex setl updatetime=1000
-let g:livepreview_previewer = 'mupdf-gl'
+let g:vimtex_view_method='skim'
+let g:tex_flavor='latex'
 
 set sessionoptions-=options
 
@@ -70,6 +70,7 @@ noremap ,s ^
 noremap ,d $
 noremap ,r #
 noremap ,c *
+nnoremap ,t zt
 inoremap jk <Esc>
 inoremap ,a <Esc>A
 vnoremap v <Esc>

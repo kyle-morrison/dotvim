@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/usr/local/Cellar/mupdf/1.12.0'
 let g:netrw_dirhist_2='/Users/kylemorrison/.vim/bundle/vim-airline'
+let g:netrw_dirhist_3='/Users/kylemorrison/.tmux'
+let g:netrw_dirhist_4='/Users/kylemorrison'
+let g:netrw_dirhist_5='/Users'
