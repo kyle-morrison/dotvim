@@ -1,0 +1,46 @@
+snippet sec "section header"
+\section{$0}
+endsnippet
+
+snippet sub "subsection header"
+\subsection{$0}
+endsnippet
+
+snippet op "oplus"
+\oplus $0
+endsnippet
+
+snippet opm "oplus math"
+$\oplus$ $0
+endsnippet
+
+snippet iu " i underscore"
+_{i}
+endsnippet
+
+snippet eq "equation"
+\begin{equation}
+	$1
+\end{equation}
+endsnippet
+
+snippet shead "standard begin header"
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage[pdftex]{graphicx}
+\usepackage{indentfirst}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{color}
+\usepackage{subcaption} 
+
+\begin{document}
+\title{$1}
+\author{Kyle Morrison}
+\maketitle
+
+$2
+\end{document}
+endsnippet
+

@@ -169,12 +169,16 @@ snippet vector "creates vector"
 vector<${1:int}> $0
 endsnippet
 
-snippet cout "print"
-cout << $1 << endl;
+snippet pr "print string with newline"
+std::cout << "$1" << std::endl;
 endsnippet
 
-snippet couti "print no newline"
-cout << $1;
+snippet prv "print string with newline"
+std::cout << "$1: " << $1 << std::endl;
+endsnippet
+
+snippet pri "print no newline"
+std::cout << $1;
 endsnippet
 
 snippet class "class template in h file"
@@ -216,3 +220,11 @@ ${1:int} ${2:`!v expand('%:t:r')`}::${3:methodName} {
 	$7
 }
 endsnippet
+
+snippet struct "Creates basic struct template"
+typedef struct ${1:person} {
+	$3
+} ${2:personType};
+endsnippet
+
+

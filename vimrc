@@ -22,6 +22,20 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-y>"
 let g:UltiSnipsEditSplit="vertical"
 
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+let g:ale_linters = {
+\   'javascript': ['jshint'],
+\ }
+nmap <silent> [W <Plug>(ale_first)
+nmap <silent> [w <Plug>(ale_previous)
+nmap <silent> ]w <Plug>(ale_next)
+nmap <silent> ]W <Plug>(ale_last)
+"let g:ale_lint_on_text_changed = 'never'
+"let g:ale_lint_on_save = 1
+"let g:ale_lint_on_enter = 0
+"let g:ale_lint_on_filetype_changed = 0
+
 let g:vimtex_view_method='skim'
 let g:tex_flavor='latex'
 
@@ -42,6 +56,8 @@ autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 set path+=**
 "don't search tags on control p
 set complete-=t
+set encoding=utf-8
+set fileencoding=utf-8
 set complete-=i
 set wrap
 set textwidth=79
@@ -71,7 +87,7 @@ noremap ,d $
 noremap ,r #
 noremap ,c *
 nnoremap ,t zt
-inoremap jk <Esc>
+inoremap jk <Esc>:w<CR>
 inoremap ,a <Esc>A
 vnoremap v <Esc>
 inoremap <C-n> <C-x><C-p>
